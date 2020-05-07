@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should match snapshot 1`] = `
+<styled.footer>
+  <Wrapper>
+    <div
+      className="content"
+    >
+      <div
+        className="about"
+      >
+        <h5>
+          Title here
+        </h5>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia rerum quibusdam inventore laborum, perspiciatis eligendi atque tempora at enim deserunt.
+        </p>
+        <ul
+          className="social-media"
+        >
+          <li>
+            <a
+              href="#"
+            >
+              <i
+                className="fab fa-instagram"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+            >
+              <i
+                className="fab fa-facebook"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+            >
+              <i
+                className="fab fa-twitter"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+            >
+              <i
+                className="fab fa-whatsapp"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div
+        className="navigation"
+      >
+        <nav>
+          <h5>
+            About
+          </h5>
+          <ul>
+            <li>
+              <a
+                href="http://"
+              >
+                History
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://"
+              >
+                Our Team
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://"
+              >
+                Brand Guidelines
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://"
+              >
+                Terms & Conditions
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://"
+              >
+                Privacy Policy
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav>
+          <h5>
+            Services
+          </h5>
+          <ul>
+            <li>
+              <a
+                href="http://"
+              >
+                How to Order
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://"
+              >
+                Our Product
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://"
+              >
+                Order Status
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://"
+              >
+                Promo
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://"
+              >
+                Payment Method
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav>
+          <h5>
+            Other
+          </h5>
+          <ul>
+            <li>
+              <a
+                href="http://"
+              >
+                Contact Us
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://"
+              >
+                Help
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://"
+              >
+                Privacy
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </Wrapper>
+</styled.footer>
+`;

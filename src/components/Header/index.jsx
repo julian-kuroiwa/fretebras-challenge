@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Container, WrapperStyled } from './style';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const scrollHandle = () => {
     if (document.documentElement.scrollTop > 100) {
@@ -22,31 +24,38 @@ const Header = () => {
     };
   });
   return (
-    <Container isScrolled={isScrolled}>
+    <Container isScrolled={isScrolled} isOpen={isOpen}>
       <WrapperStyled>
-        <a href="#">
+        <Link to="/">
           <i className="fas fa-hamburger" />
-        </a>
+        </Link>
 
         <nav>
+          <button type="button" onClick={() => setIsOpen(false)}>
+            <i className="fas fa-times" />
+          </button>
           <ul>
             <li>
-              <a href="#">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#">Search</a>
+              <Link to="/">Search</Link>
             </li>
             <li>
-              <a href="#">Promo</a>
+              <Link to="/">Promo</Link>
             </li>
             <li>
-              <a href="#">About</a>
+              <Link to="/">About</Link>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <Link to="/">Contact</Link>
             </li>
           </ul>
         </nav>
+
+        <button type="button" onClick={() => setIsOpen(true)}>
+          <i className="fas fa-bars" />
+        </button>
       </WrapperStyled>
     </Container>
   );
