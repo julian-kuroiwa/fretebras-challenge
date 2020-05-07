@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Container, WrapperStyled } from './style';
 
@@ -25,9 +26,9 @@ const Header = () => {
   return (
     <Container isScrolled={isScrolled} isOpen={isOpen}>
       <WrapperStyled>
-        <a href="#">
+        <Link to="/">
           <i className="fas fa-hamburger" />
-        </a>
+        </Link>
 
         <nav>
           <button type="button" onClick={() => setIsOpen(false)}>
@@ -35,19 +36,19 @@ const Header = () => {
           </button>
           <ul>
             <li>
-              <a href="#">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#">Search</a>
+              <Link to="/">Search</Link>
             </li>
             <li>
-              <a href="#">Promo</a>
+              <Link to="/">Promo</Link>
             </li>
             <li>
-              <a href="#">About</a>
+              <Link to="/">About</Link>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <Link to="/">Contact</Link>
             </li>
           </ul>
         </nav>
