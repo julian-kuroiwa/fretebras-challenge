@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match snapshot 1`] = `
+<styled.header
+  isScrolled={false}
+>
+  <Styled(Wrapper)>
+    <a
+      href="#"
+    >
+      <i
+        className="fas fa-hamburger"
+      />
+    </a>
+    <nav>
+      <ul>
+        <li>
+          <a
+            href="#"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+          >
+            Search
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+          >
+            Promo
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </Styled(Wrapper)>
+</styled.header>
+`;

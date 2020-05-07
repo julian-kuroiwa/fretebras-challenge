@@ -1,15 +1,7 @@
-// For a detailed explanation regarding each configuration property, visit:
-// https://jestjs.io/docs/en/configuration.html
-
 module.exports = {
-  clearMocks: true,
-  collectCoverageFrom: ['src/**/*.{js,jsx,mjs}'],
-  coverageDirectory: 'coverage',
-  moduleFileExtensions: ['js', 'json', 'jsx'],
-  setupFiles: ['<rootDir>/src/setupTest.js'],
-  testEnvironment: 'jsdom',
-  testMatch: ['**/__tests__/**/*.js?(x)', '**/?(*.)+(spec|test).js?(x)'],
-  testPathIgnorePatterns: ['\\\\node_modules\\\\'],
-  transformIgnorePatterns: ['<rootDir>/node_modules/'],
-  verbose: false,
+  roots: ['<rootDir>/src'],
+  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.jsx?$',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  snapshotSerializers: ['enzyme-to-json/serializer'],
+  setupFilesAfterEnv: ['<rootDir>/src/setupTests.js'],
 };
