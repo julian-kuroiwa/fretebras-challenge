@@ -4,6 +4,7 @@ import { Container, WrapperStyled } from './style';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const scrollHandle = () => {
     if (document.documentElement.scrollTop > 100) {
@@ -22,13 +23,16 @@ const Header = () => {
     };
   });
   return (
-    <Container isScrolled={isScrolled}>
+    <Container isScrolled={isScrolled} isOpen={isOpen}>
       <WrapperStyled>
         <a href="#">
           <i className="fas fa-hamburger" />
         </a>
 
         <nav>
+          <button type="button" onClick={() => setIsOpen(false)}>
+            <i className="fas fa-times" />
+          </button>
           <ul>
             <li>
               <a href="#">Home</a>
@@ -47,6 +51,10 @@ const Header = () => {
             </li>
           </ul>
         </nav>
+
+        <button type="button" onClick={() => setIsOpen(true)}>
+          <i className="fas fa-bars" />
+        </button>
       </WrapperStyled>
     </Container>
   );

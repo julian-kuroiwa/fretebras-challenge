@@ -9,4 +9,18 @@ describe('Header', () => {
 
     expect(component).toMatchSnapshot();
   });
+
+  it('should contain an icon', () => {
+    const component = shallow(<Header />);
+
+    expect(
+      component.containsMatchingElement(<i className="fas fa-hamburger" />),
+    ).toBeTruthy();
+  });
+
+  it('should contain an nav', () => {
+    const component = shallow(<Header />);
+
+    expect(component.find('nav')).toBeTruthy();
+  });
 });
