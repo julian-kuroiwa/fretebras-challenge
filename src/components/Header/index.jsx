@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { Container, WrapperStyled } from './style';
 
-const Header = () => {
+const Header = ({ className }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -24,7 +24,7 @@ const Header = () => {
     };
   });
   return (
-    <Container isScrolled={isScrolled} isOpen={isOpen}>
+    <Container isScrolled={isScrolled} isOpen={isOpen} className={className}>
       <WrapperStyled>
         <Link to="/">
           <i className="fas fa-hamburger" />

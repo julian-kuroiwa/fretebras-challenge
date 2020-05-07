@@ -186,7 +186,6 @@ export const Search = styled.section`
         position: relative;
         margin-bottom: 40px;
 
-
         input {
           width: 100%;
           border: 0;
@@ -202,12 +201,12 @@ export const Search = styled.section`
           left: 20px;
           font-size: 35px;
           transform: translateY(-50%);
-          }
         }
       }
     }
   }
 `;
+
 export const Popular = styled.section`
   display: flex;
   align-items: center;
@@ -236,7 +235,7 @@ export const Popular = styled.section`
       `};
     }
 
-    ul {
+    > div {
       list-style: none;
       flex-direction: column;
       display: flex;
@@ -245,49 +244,6 @@ export const Popular = styled.section`
       ${mediaQueries('medium')`
         flex-direction: row;
       `};
-
-      li {
-        background-color: #fff;
-        padding: 20px;
-        text-align: center;
-        color: #f74a3e;
-        margin-bottom: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-        ${mediaQueries('medium')`
-          max-width: 300px;
-          margin-bottom: 0;
-
-          & + li {
-            margin-left: 50px;
-          }
-        `};
-
-        h4 {
-          margin-bottom: 20px;
-          font-size: 20px;
-          text-transform: uppercase;
-        }
-
-        > i {
-          font-size: 100px;
-          margin-bottom: 20px;
-          display: block;
-        }
-
-        strong {
-          margin-bottom: 10px;
-          font-size: 20px;
-          display: block;
-        }
-
-        p {
-          margin-bottom: 20px;
-        }
-      }
     }
   }
 `;
