@@ -1,27 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Container } from './style';
 
-const Pagination = () => {
+const Pagination = ({ totalPages, paginate, startsAt, perPage }) => {
+  const [pageActive, setPageActive] = useState(startsAt / perPage);
+
+  const clickHandle = (index) => {
+    setPageActive(index);
+    paginate(index);
+  };
+
   return (
     <Container>
       <nav>
         <ul>
-          <li>
-            <a href="#">1</a>
-          </li>
-          <li>
-            <a href="#">2</a>
-          </li>
-          <li>
-            <a href="#">3</a>
-          </li>
-          <li>
-            <a href="#">4</a>
-          </li>
-          <li>
-            <a href="#">5</a>
-          </li>
+          {perPage >= 20 &&
+            Array.from(Array(totalPages), (e, i) => (
+              <li key={i}>
+                <button
+                  className={pageActive === i ? 'active' : ''}
+                  type="button"
+                  onClick={() => clickHandle(i)}
+                >
+                  {i + 1}
+                </button>
+              </li>
+            ))}
         </ul>
       </nav>
     </Container>
