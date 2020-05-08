@@ -19,40 +19,40 @@ exports[`Footer should match snapshot 1`] = `
           className="social-media"
         >
           <li>
-            <a
-              href="#"
+            <Link
+              to="/"
             >
               <i
                 className="fab fa-instagram"
               />
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/"
             >
               <i
                 className="fab fa-facebook"
               />
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/"
             >
               <i
                 className="fab fa-twitter"
               />
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/"
             >
               <i
                 className="fab fa-whatsapp"
               />
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
@@ -65,39 +65,39 @@ exports[`Footer should match snapshot 1`] = `
           </h5>
           <ul>
             <li>
-              <a
-                href="http://"
+              <Link
+                to="/"
               >
                 History
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="http://"
+              <Link
+                to="/"
               >
                 Our Team
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="http://"
+              <Link
+                to="/"
               >
                 Brand Guidelines
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="http://"
+              <Link
+                to="/"
               >
                 Terms & Conditions
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="http://"
+              <Link
+                to="/"
               >
                 Privacy Policy
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -107,39 +107,39 @@ exports[`Footer should match snapshot 1`] = `
           </h5>
           <ul>
             <li>
-              <a
-                href="http://"
+              <Link
+                to="/"
               >
                 How to Order
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="http://"
+              <Link
+                to="/"
               >
                 Our Product
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="http://"
+              <Link
+                to="/"
               >
                 Order Status
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="http://"
+              <Link
+                to="/"
               >
                 Promo
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="http://"
+              <Link
+                to="/"
               >
                 Payment Method
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -149,25 +149,25 @@ exports[`Footer should match snapshot 1`] = `
           </h5>
           <ul>
             <li>
-              <a
-                href="http://"
+              <Link
+                to="/"
               >
                 Contact Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="http://"
+              <Link
+                to="/"
               >
                 Help
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="http://"
+              <Link
+                to="/"
               >
                 Privacy
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

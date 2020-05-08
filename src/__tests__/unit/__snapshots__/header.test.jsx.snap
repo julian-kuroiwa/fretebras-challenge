@@ -6,13 +6,13 @@ exports[`Header should match snapshot 1`] = `
   isScrolled={false}
 >
   <Styled(Wrapper)>
-    <a
-      href="#"
+    <Link
+      to="/"
     >
       <i
         className="fas fa-hamburger"
       />
-    </a>
+    </Link>
     <nav>
       <button
         onClick={[Function]}
@@ -24,39 +24,39 @@ exports[`Header should match snapshot 1`] = `
       </button>
       <ul>
         <li>
-          <a
-            href="#"
+          <Link
+            to="/"
           >
             Home
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="#"
+          <Link
+            to="/"
           >
             Search
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="#"
+          <Link
+            to="/"
           >
             Promo
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="#"
+          <Link
+            to="/"
           >
             About
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="#"
+          <Link
+            to="/"
           >
             Contact
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>

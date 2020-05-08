@@ -1,40 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouteMatch } from 'react-router-dom';
+
+import api from '../../services/api';
 
 import Wrapper from '../../components/Wrapper';
 import Footer from '../../components/Footer';
 
-import { Container, Header, Filter, Results, Card } from './style';
+import { Container, Header, Filter, Results, Card, Loader } from './style';
 
 const Restaurants = () => {
   const { params } = useRouteMatch();
+  const [restaurants, setRestaurants] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [perPage, setPerPage] = useState(null);
+  const [total, setTotal] = useState(null);
+  const [pageNumber, setPageNumber] = useState([]);
 
-  const results = [
-    {
-      id: '1',
-      name: 'Package I',
-      location: {
-        address: 'Prešernova 4, Staré Mesto, Bratislava I',
-      },
-      user_rating: {
-        aggregate_rating: '4.7',
-      },
-    },
-    {
-      id: '2',
-      name: 'Package II',
-      price: '$20.00',
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, perferendis?',
-    },
-    {
-      id: '3',
-      name: 'Package III',
-      price: '$30.00',
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, perferendis?',
-    },
-  ];
+  useEffect(() => {
+    setIsLoading(true);
+
+    api.get(`/search?city_id=${params.id}`).then((response) => {
+      setRestaurants(response.data.restaurants);
+      setPerPage(response.data.results_shown);
+      setTotal(response.data.results_found);
+      setIsLoading(false);
+    });
+  }, []);
 
   return (
     <Container>
@@ -42,15 +33,19 @@ const Restaurants = () => {
       <div className="restaurants-content">
         <Wrapper>
           <h1>
-            Results for: <span>São Paulo - SP</span>
+            Results for: <span>{params.cityName}</span>
           </h1>
           <div className="results-content">
             <Filter />
-            <Results>
-              {results.map((result) => (
-                <Card key={result.name} item={result} />
-              ))}
-            </Results>
+            {isLoading ? (
+              <Loader />
+            ) : (
+              <Results>
+                {restaurants.map((result) => (
+                  <Card key={result.restaurant.id} item={result.restaurant} />
+                ))}
+              </Results>
+            )}
           </div>
         </Wrapper>
       </div>

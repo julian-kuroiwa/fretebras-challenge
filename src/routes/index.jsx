@@ -7,7 +7,7 @@ import Restaurants from '../pages/Restaurants';
 const Routes = () => (
   <Switch>
     <Route path="/" exact component={Home} />
-    <Route path="/city+" component={Restaurants} />
+    <Route path="/restaurants/:cityName+/:id+" component={Restaurants} />
   </Switch>
 );
 

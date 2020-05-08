@@ -1,5 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { shade } from 'polished';
+
 import { mediaQueries } from '../../styles/media';
+
+import LoaderComponent from '../../components/Loader';
 
 import BurguerBg from '../../assets/burguer-background.jpg';
 import BurguerImg from '../../assets/burguer.jpg';
@@ -180,29 +184,6 @@ export const Search = styled.section`
       display: flex;
       align-items: center;
       flex-direction: column;
-
-      div {
-        width: 100%;
-        position: relative;
-        margin-bottom: 40px;
-
-        input {
-          width: 100%;
-          border: 0;
-          border-radius: 50px;
-          height: 70px;
-          padding: 0 20px 0 70px;
-        }
-
-        i {
-          position: absolute;
-          color: #f74a3e;
-          top: 50%;
-          left: 20px;
-          font-size: 35px;
-          transform: translateY(-50%);
-        }
-      }
     }
   }
 `;
@@ -246,4 +227,84 @@ export const Popular = styled.section`
       `};
     }
   }
+`;
+
+export const Autocomplete = styled.div`
+  width: 100%;
+  margin-bottom: 40px;
+  position: relative;
+
+  .input-container {
+    width: 100%;
+    position: relative;
+
+    input {
+      width: 100%;
+      border: 2px solid #fff;
+      border-radius: 50px;
+      height: 70px;
+      padding: 0 20px 0 70px;
+
+      ${(props) =>
+        props.error &&
+        css`
+          border-color: ${shade(0.2, '#ff0090')};
+        `}
+    }
+
+    i {
+      position: absolute;
+      color: #f74a3e;
+      top: 50%;
+      left: 20px;
+      font-size: 35px;
+      transform: translateY(-50%);
+    }
+  }
+
+  .results-container {
+    background-color: #fff;
+    list-style: none;
+    max-width: 80%;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 5px);
+    width: 100%;
+    max-height: 200px;
+    overflow: scroll;
+
+    > button {
+      padding: 20px;
+      border: 0;
+      display: block;
+      width: 100%;
+      text-align: left;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: ${shade(0.2, '#fff')};
+      }
+    }
+  }
+
+  > span {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+`;
+
+export const Loader = styled(LoaderComponent)`
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  background: #fff;
 `;
