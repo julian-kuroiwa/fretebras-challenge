@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useRouteMatch } from 'react-router-dom';
+import { useRouteMatch, useHistory } from 'react-router-dom';
 
 import api from '../../services/api';
 import toQueryString from '../../helpers/toQueryString';
@@ -13,28 +13,44 @@ import { Container, Header, Filter, Results, Card, Loader } from './style';
 
 const Restaurants = () => {
   const { params } = useRouteMatch();
+  const history = useHistory();
 
   const [restaurants, setRestaurants] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [pages, setPages] = useState(null);
-  const [perPage, setPerPage] = useState(null);
-  const [startsAt, setStartsAt] = useState(null);
+  const [pages, setPages] = useState(0);
+  const [perPage, setPerPage] = useState(0);
+  const [startsAt, setStartsAt] = useState(0);
   const [total] = useState(80);
   const [queryString, setQueryString] = useState({});
   const [types, setTypes] = useState([]);
+  const [error, setError] = useState('');
 
   const requestHandle = async (queryParams) => {
     setIsLoading(true);
+    setError('');
 
-    const response = await api.get(
-      `/search?city_id=${params.id}&${toQueryString(queryParams)}`,
-    );
+    try {
+      const response = await api.get(
+        `/search?city_id=${params.id}&${toQueryString(queryParams)}`,
+      );
 
-    setIsLoading(false);
-    setRestaurants(response.data.restaurants);
-    setStartsAt(response.data.results_start);
-    setPerPage(response.data.results_shown);
-    setPages(total / response.data.results_shown);
+      setIsLoading(false);
+      setRestaurants(response.data.restaurants);
+      setStartsAt(response.data.results_start);
+      setPerPage(response.data.results_shown);
+      setPages(total / response.data.results_shown);
+    } catch {
+      setError(
+        `Something went wrong, when you'll be redirect. Please, try again :(`,
+      );
+      setRestaurants([]);
+      setIsLoading(false);
+      setStartsAt(0);
+      setPerPage(0);
+      setPages(0);
+
+      setTimeout(() => history.push('/'), 3000);
+    }
   };
 
   useEffect(() => {
@@ -46,6 +62,10 @@ const Restaurants = () => {
   }, []);
 
   useEffect(() => {
+    window.scroll({
+      top: 0,
+    });
+
     requestHandle(queryString);
   }, [queryString]);
 
@@ -115,23 +135,29 @@ const Restaurants = () => {
                 </div>
               </div>
             </Filter>
-            {isLoading ? (
-              <Loader />
-            ) : (
-              <div className="results-wrapper">
-                <Results>
-                  {restaurants.map((result) => (
-                    <Card key={result.restaurant.id} item={result.restaurant} />
-                  ))}
-                </Results>
-                <Pagination
-                  startsAt={startsAt}
-                  perPage={perPage}
-                  totalPages={pages}
-                  paginate={paginateHandle}
-                />
-              </div>
-            )}
+            <div className="results-wrapper">
+              {isLoading ? (
+                <Loader />
+              ) : (
+                <>
+                  <Results>
+                    {restaurants.map((result) => (
+                      <Card
+                        key={result.restaurant.id}
+                        item={result.restaurant}
+                      />
+                    ))}
+                  </Results>
+                  <Pagination
+                    startsAt={startsAt}
+                    perPage={perPage}
+                    totalPages={pages}
+                    paginate={paginateHandle}
+                  />
+                </>
+              )}
+              {error && <p className="error">{error}</p>}
+            </div>
           </div>
         </Wrapper>
       </div>

@@ -31,6 +31,11 @@ export const Container = styled.div`
         gap: 50px;
       `};
     }
+
+    .error {
+      text-align: center;
+      font-size: 36px;
+    }
   }
 `;
 
