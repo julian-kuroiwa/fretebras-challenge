@@ -46,7 +46,7 @@ const Home = () => {
     },
   ];
 
-  const debounceSearch = useDebounce(inputValue, 1000);
+  const debounceSearch = useDebounce(inputValue, 600);
 
   useEffect(() => {
     if (debounceSearch) {
@@ -83,6 +83,8 @@ const Home = () => {
   };
 
   const clickOptionHandle = (id, name) => {
+    inputRef.current.value = name;
+
     setCitySelected({ id, name });
     setResults([]);
   };

@@ -217,7 +217,7 @@ export const Popular = styled.section`
     }
 
     > div {
-      list-style: none;
+      : none;
       flex-direction: column;
       display: flex;
       justify-content: space-between;
@@ -264,7 +264,7 @@ export const Autocomplete = styled.div`
 
   .results-container {
     background-color: #fff;
-    list-style: none;
+    : none;
     max-width: 80%;
     position: absolute;
     top: 100%;

@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 
-import Wrapper from '../../components/Wrapper';
+import Wrapper from '../components/Wrapper';
 
 describe('Wrapper', () => {
   it('should match snapshot', () => {

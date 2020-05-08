@@ -25,12 +25,10 @@ export const Container = styled.div`
     }
 
     .results-content {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 50px;
-
       ${mediaQueries('medium')`
+        display: grid;
         grid-template-columns: 1fr 2fr;
+        gap: 50px;
       `};
     }
   }
@@ -42,27 +40,58 @@ export const Header = styled(HeaderComponent)`
 
 export const Filter = styled.div`
   width: 100%;
-  height: 300px;
   background: #fff;
+  padding: 20px 10px;
+  max-height: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+
+  ${mediaQueries('medium')`
+    max-height: 350px;
+    display: block;
+    padding: 20px;
+  `};
+
+  h5 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #f74a3e;
+  }
+
+  > div {
+    ${mediaQueries('medium')`
+      margin-bottom: 20px;
+  `};
+
+    > div {
+      max-height: 120px;
+      overflow: scroll;
+      padding: 10px 0;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
 `;
 
 export const Results = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-
   ${mediaQueries('small')`
+    display: grid;
+    gap: 20px;
     grid-template-columns: 1fr 1fr;
   `};
 `;
 
 export const Card = styled(CardComponent)`
   max-width: 100%;
-  margin: 0;
 
-  & + div {
-    margin: 0;
-  }
+  ${mediaQueries('medium')`
+    & + div {
+      margin: 0;
+    }
+  `};
 `;
 
 export const Loader = styled(LoaderComponent)`

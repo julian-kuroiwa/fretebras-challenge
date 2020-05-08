@@ -53,7 +53,7 @@ export const Container = styled.header`
       `};
 
     ul {
-      list-style: none;
+      : none;
 
       ${mediaQueries('small')`
         display: flex;

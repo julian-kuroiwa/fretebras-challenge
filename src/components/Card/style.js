@@ -39,7 +39,18 @@ export const Container = styled.div`
     display: block;
   }
 
-  p {
+  p,
+  div {
     margin-bottom: 20px;
+  }
+
+  div {
+    i {
+      color: #f6c43e;
+
+      &.none {
+        color: #cecece;
+      }
+    }
   }
 `;

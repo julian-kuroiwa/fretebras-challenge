@@ -28,7 +28,7 @@ export const Container = styled.footer`
     }
 
     .social-media {
-      list-style: none;
+      : none;
       display: flex;
 
       a {
@@ -85,7 +85,7 @@ export const Container = styled.footer`
         }
 
         > ul {
-          list-style: none;
+          : none;
 
           li {
             margin-bottom: 10px;

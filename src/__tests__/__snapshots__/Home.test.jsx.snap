@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should match snapshot 1`] = `
+<Fragment>
+  <Header />
+  <styled.section>
+    <Wrapper>
+      <div
+        className="content"
+      >
+        <h1>
+          Get cashback up to 50%
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti incidunt, quae suscipit eligendi voluptatum unde.
+        </p>
+        <Button
+          isNegative={false}
+          type="button"
+        >
+          Order Now
+        </Button>
+      </div>
+    </Wrapper>
+  </styled.section>
+  <styled.section>
+    <Wrapper>
+      <div
+        className="content"
+      >
+        <div>
+          <h2>
+            Big Burguer
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti incidunt, quae suscipit eligendi voluptatum unde.
+          </p>
+          <Button
+            isNegative={false}
+            type="button"
+          >
+            Order Now
+          </Button>
+        </div>
+        <div
+          className="round-image"
+        />
+      </div>
+    </Wrapper>
+  </styled.section>
+  <styled.section>
+    <Wrapper>
+      <div
+        className="content"
+      >
+        <h2>
+          Search the best burguers
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti incidunt, quae suscipit eligendi voluptatum unde.
+        </p>
+        <form
+          onSubmit={[Function]}
+        >
+          <styled.div
+            error={false}
+          >
+            <div
+              className="input-container"
+            >
+              <input
+                onChange={[Function]}
+                placeholder="ex. São Paulo"
+                type="search"
+              />
+              <i
+                className="fas fa-map-marker-alt"
+              />
+            </div>
+          </styled.div>
+          <Button
+            isNegative={true}
+            type="submit"
+          >
+            Search
+          </Button>
+        </form>
+      </div>
+    </Wrapper>
+  </styled.section>
+  <styled.section>
+    <Wrapper>
+      <div
+        className="content"
+      >
+        <h2>
+          Popular Package
+        </h2>
+        <div>
+          <Card
+            item={
+              Object {
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, perferendis?",
+                "id": "1",
+                "name": "Package I",
+                "price": "$10.00",
+              }
+            }
+            key="1"
+          />
+          <Card
+            item={
+              Object {
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, perferendis?",
+                "id": "2",
+                "name": "Package II",
+                "price": "$20.00",
+              }
+            }
+            key="2"
+          />
+          <Card
+            item={
+              Object {
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, perferendis?",
+                "id": "3",
+                "name": "Package III",
+                "price": "$30.00",
+              }
+            }
+            key="3"
+          />
+        </div>
+      </div>
+    </Wrapper>
+  </styled.section>
+  <Footer />
+</Fragment>
+`;
